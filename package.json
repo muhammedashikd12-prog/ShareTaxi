@@ -1,0 +1,18 @@
+{
+  "name": "sharetaxi-monorepo",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace apps/web",
+    "dev:mobile": "npm run start --workspace apps/mobile",
+    "build": "npm run build --workspace apps/web",
+    "build:mobile": "npm run export --workspace apps/mobile",
+    "lint": "npm run lint --workspace apps/web",
+    "typecheck": "npm run typecheck --workspace apps/web",
+    "typecheck:mobile": "tsc --noEmit -p apps/mobile/tsconfig.json"
+  }
+}
